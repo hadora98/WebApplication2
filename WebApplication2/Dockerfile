@@ -6,11 +6,11 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
-WORKDIR /src
-COPY ["WebApplication2/WebApplication2.csproj", "WebApplication2"]
+WORKDIR ..
+COPY ["WebApplication2/WebApplication2.csproj", "WebApplication2/"]
 RUN dotnet restore "WebApplication2/WebApplication2.csproj"
 COPY . .
-WORKDIR "/src/WebApplication2"
+WORKDIR .
 RUN dotnet build "WebApplication2.csproj" -c Release -o /app/build
 
 FROM build AS publish
