@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/aspnet:5.0
-COPY bin/Release/net5.0/publish/App/
+FROM mcr.microsoft.com/dotnet/aspnet:3.1
+COPY bin/Release/net3.1/publish/App/
 WORKDIR /App
 ENTRYPOINT ["dotnet", "WebApplication2.dll"]
